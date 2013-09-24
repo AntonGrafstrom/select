@@ -4,19 +4,19 @@ select
 A JavaScript library for probability sampling
 
 
-´´´
+```
 // Draw a simple random sample without replacement of size 5 from a population of size 10
 s = js.srs(5,10);
 print(s);
-´´´	 
+```	 
 
-´´´
+```
 // Draw a simple random sample with replacement of size 5 from a population of size 10
 s = js.srs(5,10,true);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // Draw 100 simple random samples without replacement of size 5 from a population of size 10
 // and print results as csv (comma separated values) where each row is a sample.
 t = [];
@@ -24,74 +24,74 @@ for(i=0;i&lt;100;i++){
 	t[i] = js.srs(5,10);
 }
 print(t.join('\n'));
-´´´ 	 
+```	 
 	 
-´´´
+```
 // Draw a Pareto pps sample
 p = [.2,.3,.7,.8]; // parameters (should sum to integer)
 s = js.pareto(p);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // Draw a Sampford pps sample
 p = [.2,.3,.7,.8]; // inclusion probabilities (should sum to integer)
 s = js.sampford(p);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // Draw a Brewer pps sample
 p = [.2,.3,.7,.8]; // inclusion probabilities (should sum to integer)
 s = js.brewer(p);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // Draw a (random size) Poisson sample
 p = [.2,.3,.7,.8]; // inclusion probabilities
 s = js.poisson(p);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // Draw a Conditional Poisson sample
 p = [.2,.3,.7,.8]; // parameters
 n = 2; // sample size
 s = js.conditionalpoisson(p,n);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // Draw a Systematic pps sample
 p = [.2,.3,.7,.8]; // inclusion probabilities
 s = js.systematic(p);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // Draw a Systematic pps sample with randomized order of the units
 p = [.2,.3,.7,.8]; // inclusion probabilities
 s = js.randomsystematic(p);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // Draw a pps sample with the random pivotal method
 p = [.2,.3,.7,.8]; // inclusion probabilities
 s = js.randompivotal(p);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // Draw a pps with replacement sample
 p = [.1,.15,.35,.4]; // drawing probabilities (should sum to 1)
 n = 2; // sample size
 s = js.ppswr(p,n);
 print(s);
-´´´ 
+```
 
-´´´
+```
 // minimal demo of the cube method
 // inclusion probabilities
 p = [.1,.2,.3,.7,.8,.9]; 
@@ -109,9 +109,9 @@ X = [
 s = js.cube(p,X);
 // print sample
 print(s);
-´´´ 
+```
 
-´´´
+```
 // starter example, work with lists, the list object has 70+ methods
 x = js.li([1,2,3,4,5]); // creates a list with elements [1,2,3,4,5]
 y = js.li([1,2,4,4,4]);
@@ -145,10 +145,10 @@ print('xycor = ' + xycor);
 // chaining
 xvar = x.substract(x.mean()).pow(2).sum()/(x.length()-1);
 print('xvar = ' + xvar);
-´´´ 	
+```	
 
 
-´´´
+```
 // check inclusion probabilities for systematic pps sample
 p = [.2,.3,.7,.8]; // inclusion probabilities
 counts = js.rep(0,4); // [0,0,0,0] counter for nr of inclusions
@@ -158,9 +158,9 @@ for(i=0;i&lt;nrs;i++){
   	counts.increment(s); // increment counts for sampled units
 }
 print(counts.divide(nrs)); // print result
-´´´ 
+```
 
-´´´
+```
 // small example with simple random sampling
 x = js.li([5,4,7,3,6,4,8,2,11,9]); // population x-values as a list
 N = x.length(); // population size
@@ -173,9 +173,9 @@ print( 'sample = ' + sample );
 print( 'sample x = ' + xs );
 print( 'mean = ' + xs.mean() );
 print( 'variance = ' + xs.variance() );
-´´´ 
+```
 
-´´´
+```
 // small bootstrap example 
 x = js.li([5,4,7,3,6,4,8,2,11,9]); // x-values as a list
 
@@ -184,11 +184,11 @@ x = js.li([5,4,7,3,6,4,8,2,11,9]); // x-values as a list
 bootstrapmean = x.bootstrap().mean();
 
 print( 'bootstrapmean = ' + bootstrapmean );
-´´´ 
+```
 
 
 
-´´´
+```
 // demo of the cube method, with simulation
 // inclusion probabilities
 p = [.1,.2,.3,.7,.8,.9]; 
@@ -213,9 +213,9 @@ for(i=0;i&lt;nrs;i++){
 }
 // check inclusion probabilities
 print(counts.divide(nrs));
-´´´ 
+```
 
-´´´
+```
 // demo of the cube method
 // 2 strata and 2 auxiliary variables
 X = [
@@ -250,4 +250,4 @@ for(i=0;i&lt;nrs;i++){
 }
 // check inclusion probabilities
 print(counts.divide(nrs));
-´´´
+```

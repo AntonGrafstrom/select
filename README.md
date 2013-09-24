@@ -20,7 +20,7 @@ print(s);
 // Draw 100 simple random samples without replacement of size 5 from a population of size 10
 // and print results as csv (comma separated values) where each row is a sample.
 t = [];
-for(i=0;i&lt;100;i++){
+for(i=0;i<100;i++){
 	t[i] = js.srs(5,10);
 }
 print(t.join('\n'));
@@ -153,7 +153,7 @@ print('xvar = ' + xvar);
 p = [.2,.3,.7,.8]; // inclusion probabilities
 counts = js.rep(0,4); // [0,0,0,0] counter for nr of inclusions
 nrs = 1000; // nr of samples to simulate
-for(i=0;i&lt;nrs;i++){
+for(i=0;i<nrs;i++){
 	s = js.systematic(p); // draw sample
   	counts.increment(s); // increment counts for sampled units
 }
@@ -207,7 +207,7 @@ counts = js.rep(0,6);
 // draw nrs samples
 nrs = 1000;
 // do simulation
-for(i=0;i&lt;nrs;i++){
+for(i=0;i<nrs;i++){
  s = js.cube(p,X);
  counts.increment(s);
 }
@@ -244,7 +244,7 @@ pik = js.rep(1/2,20);
 counts = js.rep(0,20);
 nrs = 1000; 
 // do simulation
-for(i=0;i&lt;nrs;i++){
+for(i=0;i<nrs;i++){
 	s = js.cube(pik,X);
 	counts.increment(s);
 }
